@@ -1,0 +1,6 @@
+.env
+__pycache__/
+temp_images/
+
+.DS_Store
+.idea/
