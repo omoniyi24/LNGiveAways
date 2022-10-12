@@ -1,11 +1,12 @@
 import tweepy
 import requests
-import json
+import os
 
-CONSUMER_KEY = ''
-CONSUMER_SECRET = ''
-ACCESS_KEY = ''
-ACCESS_SECRET = ''
+CONSUMER_KEY = os.environ['CONSUMER_KEY']
+CONSUMER_SECRET = os.environ['CONSUMER_SECRET']
+ACCESS_KEY = os.environ['ACCESS_KEY']
+ACCESS_SECRET = os.environ['ACCESS_SECRET']
+LN_API_KEY = os.environ['LN_API_KEY']
 
 auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
 auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
@@ -38,7 +39,7 @@ for retweet in retweets_list:
     print(retweet.user.screen_name) # printing the screen names of the retweeters
     retweeterId = retweet.user.id  # the ID of the tweeter
     if not retweeterId == 1579128080483991552:
-        headers = {"Content-Type": "application/json", "X-Api-Key": ""}
+        headers = {"Content-Type": "application/json", "X-Api-Key": LN_API_KEY}
         payload = {
             "title": "LN GiveAway",
             "min_withdrawable": 2,
