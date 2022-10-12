@@ -38,7 +38,7 @@ for retweet in retweets_list:
     print(retweet.user.screen_name) # printing the screen names of the retweeters
     retweeterId = retweet.user.id  # the ID of the tweeter
     if not retweeterId == 1579128080483991552:
-        headers = {"Content-Type": "application/json", "X-Api-Key": "0e17df906099426f8e9ef5b1b4b28a87"}
+        headers = {"Content-Type": "application/json", "X-Api-Key": ""}
         payload = {
             "title": "LN GiveAway",
             "min_withdrawable": 2,
